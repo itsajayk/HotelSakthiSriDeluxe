@@ -29,9 +29,9 @@ const Footer = () => {
               <div className="ft-contact">
                 <h6>Contact Us</h6>
                 <ul>
-                  <li>(12) 345 67890</li>
-                  <li>info.colorlib@gmail.com</li>
-                  <li>856 Cordia Extension Apt. 356, Lake, United State</li>
+                  <li>0427-3510200</li>
+                  <li>hotelsrisakthideluxe@gmail.com</li>
+                  <li>890, 91, 92, Behind New Bus Stand, Chinnery Vayal Kadu, Pallappatti, Salem - 636 009</li>
                 </ul>
               </div>
             </div>
