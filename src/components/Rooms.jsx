@@ -4,7 +4,7 @@ const Rooms = () => {
   const rooms = [
     {
       name: 'Double Room',
-      price: 199,
+      // price: 199,
       img: 'img/room/room-b1.jpg',
     },
     {
@@ -19,7 +19,7 @@ const Rooms = () => {
     },
     {
       name: 'Family Room',
-      price: 299,
+      // price: 299,
       img: 'img/room/room-b4.jpg',
     },
   ];

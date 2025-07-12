@@ -545,11 +545,12 @@ ul, ol {
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 .hero-text h3 {
-	font-size: 25px;
+	font-size: 28px;
 	color: #ffffff;
 	line-height: 28px;
 	margin-bottom: 35px;
-	font-weight: bold;
+	/* font-weight: bold; */
+	font-family: "Pacifico", cursive;
 }
 .booking-form {
 	background: #ffffff;
