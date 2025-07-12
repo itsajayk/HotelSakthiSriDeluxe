@@ -13,27 +13,27 @@ const Contact = () => {
               <div className="contact-text">
                 <h2>Contact Info</h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                  labore et dolore magna aliqua.
+                  {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                  labore et dolore magna aliqua. */}
                 </p>
                 <table>
                   <tbody>
                     <tr>
                       <td className="c-o">Address:</td>
-                      <td>856 Cordia Extension Apt. 356, Lake, US</td>
+                      <td>Behind New Bus Stand, Chinnery Vayal Kadu, Pallappatti, Salem</td>
                     </tr>
                     <tr>
                       <td className="c-o">Phone:</td>
-                      <td>(12) 345 67890</td>
+                      <td> (0427) - 3510200</td>
                     </tr>
                     <tr>
                       <td className="c-o">Email:</td>
-                      <td>info.colorlib@gmail.com</td>
+                      <td>hotelsrisakthideluxe@gmail.com</td>
                     </tr>
-                    <tr>
+                    {/* <tr>
                       <td className="c-o">Fax:</td>
                       <td>+(12) 345 67890</td>
-                    </tr>
+                    </tr> */}
                   </tbody>
                 </table>
               </div>

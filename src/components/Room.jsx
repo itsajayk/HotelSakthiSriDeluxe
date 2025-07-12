@@ -26,12 +26,12 @@ const Room = () => {
                 <div className="container">
                     <div className="row">
                         {[
-                            { title: "Premium King Room", src: "/img/room/room-1.jpg", capacity: 3 },
-                            { title: "Deluxe Room", src: "/img/room/room-2.jpg", capacity: 5 },
-                            { title: "Double Room", src: "/img/room/room-3.jpg", capacity: 2 },
-                            { title: "Luxury Room", src: "/img/room/room-4.jpg", capacity: 1 },
-                            { title: "Room With View", src: "/img/room/room-5.jpg", capacity: 1 },
-                            { title: "Small View", src: "/img/room/room-6.jpg", capacity: 2 },
+                            // { title: "Premium King Room", src: "/img/room/room-1.jpg", capacity: 3 },
+                            { title: "Deluxe Room A/c", src: "/img/room/room-2.jpg", capacity: 5 },
+                            { title: "Deluxe Room Non A/c", src: "/img/room/room-3.jpg", capacity: 2 },
+                            // { title: "Luxury Room", src: "/img/room/room-4.jpg", capacity: 1 },
+                            // { title: "Room With View", src: "/img/room/room-5.jpg", capacity: 1 },
+                            // { title: "Small View", src: "/img/room/room-6.jpg", capacity: 2 },
                         ].map((room, i) => (
                             <div className="col-lg-4 col-md-6" key={i}>
                                 <div className="room-item">

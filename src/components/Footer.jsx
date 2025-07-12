@@ -31,7 +31,7 @@ const Footer = () => {
                 <ul>
                   <li>0427-3510200</li>
                   <li>hotelsrisakthideluxe@gmail.com</li>
-                  <li>890, 91, 92, Behind New Bus Stand, Chinnery Vayal Kadu, Pallappatti, Salem - 636 009</li>
+                  <li>90, 91, 92, Behind New Bus Stand, Chinnery Vayal Kadu, Pallappatti, Salem - 636 009</li>
                 </ul>
               </div>
             </div>
