@@ -11,17 +11,16 @@ const About = () => {
                     <div className="section-title">
                     <span>About Us</span>
                     <h2>
-                        Intercontinental LA <br />Westlake Hotel
+                        Where Comfort  <br />Meets Elegance
                     </h2>
                     </div>
                     <p className="f-para">
-                    HotelSakthiSriDeluxe.com is a leading online accommodation site. We’re passionate about
-                    travel. Every day, we inspire and reach millions of travelers across 90 local
-                    websites in 41 languages.
+                    Welcome to Hotel Sri Sakthi Deluxe, your trusted choice for quality stays. We’re committed to comfort and hospitality. 
+                    Each day, we welcome guests from all walks of life across a wide range of rooms and services.
                     </p>
                     <p className="s-para">
-                    So when it comes to booking the perfect hotel, vacation rental, resort,
-                    apartment, guest house, or tree house, we’ve got you covered.
+                    Whether you seek a suite, deluxe room, or family space, our hotel delivers convenience, warmth, and value in the heart of 
+                    the city—making your trip truly enjoyable.
                     </p>
                     <a href="#" className="primary-btn about-btn">
                     Read More
@@ -32,7 +31,7 @@ const About = () => {
                 <div className="about-pic">
                     <div className="row">
                     <div className="col-sm-6">
-                        <img src="img/about/about-1.jpg" alt="" />
+                        <img src="img/about/hero-6.jpeg" alt="" />
                     </div>
                     <div className="col-sm-6">
                         <img src="img/about/about-2.jpg" alt="" />

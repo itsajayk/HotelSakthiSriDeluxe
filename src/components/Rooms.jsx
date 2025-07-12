@@ -8,13 +8,13 @@ const Rooms = () => {
       img: 'img/room/room-b1.jpg',
     },
     {
-      name: 'Premium King Room',
-      price: 159,
+      name: 'Deluxe A/c',
+      price: 1800,
       img: 'img/room/room-b2.jpg',
     },
     {
-      name: 'Deluxe Room',
-      price: 198,
+      name: 'Deluxe Non A/c',
+      price: 1100,
       img: 'img/room/room-b3.jpg',
     },
     {
@@ -38,7 +38,7 @@ const Rooms = () => {
                   <div className="hr-text">
                     <h3>{room.name}</h3>
                     <h2>
-                      ${room.price}
+                      ₹{room.price}
                       <span>/Per night</span>
                     </h2>
                     <table>

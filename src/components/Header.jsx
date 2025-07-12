@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // ✅ Import Link
 
-const Header = () => {
+const Header = ({ onBookingClick }) => {
     return (
         <div>
             <header className="header-section">
@@ -22,7 +22,20 @@ const Header = () => {
                                         <a href="#"><i className="fa fa-tripadvisor"></i></a>
                                         <a href="#"><i className="fa fa-instagram"></i></a>
                                     </div>
-                                    <Link to="/booking" className="bk-btn">Booking Now</Link>
+                                    <button
+                                        onClick={onBookingClick}
+                                        className={`
+                                        bk-btn 
+                                        bg-blue-600 text-white 
+                                        px-4 py-2 rounded 
+                                        border-0 outline-none focus:outline-none focus:ring-0 
+                                        ring-4 ring-blue-400 ring-opacity-50 
+                                        animate-pulse 
+                                        transition
+                                        `}
+                                    >
+                                        Booking Now
+                                    </button>
                                     <div className="language-option">
                                         <img src="/img/flag.jpg" alt="" />
                                         <span>EN <i className="fa fa-angle-down"></i></span>
@@ -45,7 +58,7 @@ const Header = () => {
                             <div className="col-lg-2">
                                 <div className="logo">
                                     <Link to="/">
-                                        <img src="/img/logo.png" alt="Logo" />
+                                        <img src="/img/Logo-ss.png" alt="Logo" />
                                     </Link>
                                 </div>
                             </div>
@@ -68,6 +81,24 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
+
+                 {/* glowing keyframes */}
+      <style jsx>{`
+        @keyframes glowing {
+          0% {
+            box-shadow: 0 0 5px #ff0203;
+          }
+          50% {
+            box-shadow: 0 0 20px #cc0102;
+          }
+          100% {
+            box-shadow: 0 0 5px #7f0001;
+          }
+        }
+        .glow {
+          animation: glowing 2s ease-in-out infinite;
+        }
+      `}</style>
             </header>
         </div>
     );

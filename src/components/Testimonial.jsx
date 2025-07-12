@@ -5,20 +5,20 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 
 const testimonials = [
   {
-    text: `After a construction project took longer than expected, my husband, my daughter and I
-    needed a place to stay for a few nights. As a Chicago resident, we know a lot about our
-    city, neighborhood and the types of housing options available and absolutely love our
-    vacation at Hotel Sakthi Sri Deluxe.`,
-    name: 'Alexander Vasquez',
+    text: `I travel frequently for work, and this hotel truly stands out. The location is unbeatable,
+    the staff is incredibly courteous, and the room service is prompt and professional. The
+    24/7 hot water, seamless power backup, and spotless rooms made my stay absolutely
+    comfortable. It felt like a home away from home!`,
+    name: 'Narendran Corporate Consultant, Chennai.',
     rating: 4.5,
     logo: '/img/testimonial-logo.png', // fixed for Vite
   },
   {
-    text: `After a construction project took longer than expected, my husband, my daughter and I
-    needed a place to stay for a few nights. As a Chicago resident, we know a lot about our
-    city, neighborhood and the types of housing options available and absolutely love our
-    vacation at Hotel Sakthi Sri Deluxe.`,
-    name: 'Alexander Vasquez',
+    text: `We stayed here during our family vacation and were truly impressed. Spacious AC
+    rooms, in-built parking, and friendly service made everything stress-free. The kids loved
+    how clean and cozy everything was, and we loved the peace of mind that came with the
+    reliable power backup and round-the-clock staff support. Highly recommended!`,
+        name: 'ASuganthi Arumugam, Chennai.',
     rating: 4.5,
     logo: '/img/testimonial-logo.png', // fixed for Vite
   },
