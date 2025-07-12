@@ -12,7 +12,7 @@ const Footer = () => {
               <div className="ft-about">
                 <div className="logo">
                   <a href="#">
-                    <img src="img/footer-logo.png" alt="footer logo" />
+                    <img src="img/footer-logo1.png" alt="footer logo" />
                   </a>
                 </div>
                 <p>We inspire and reach millions of travelers<br /> across 90 local websites</p>

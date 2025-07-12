@@ -2,15 +2,18 @@ import React from "react";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-import Hero1 from "../assets/hero/hero-1.jpg";
-import Hero2 from "../assets/hero/hero-2.jpg";
-import Hero3 from "../assets/hero/hero-3.jpg";
+import Hero1 from "../assets/hero/hero-4.jpeg";
+import Hero2 from "../assets/hero/hero-5.jpeg";
+// import Hero3 from "../assets/hero/hero-6.jpeg";
 
-const Hero = () => {
-  const sliderImages = [Hero1, Hero2, Hero3];
+const Hero = ({ showBookingForm, onCloseBooking }) => {
+  const sliderImages = [Hero1, Hero2];
 
   return (
-    <section className="hero-section" style={{ position: "relative", overflow: "hidden" }}>
+    <section
+      className="hero-section"
+      style={{ position: "relative", overflow: "hidden" }}
+    >
       {/* Background Image Carousel */}
       <OwlCarousel
         className="hero-slider owl-theme"
@@ -49,55 +52,126 @@ const Hero = () => {
           height: "90%",
           display: "flex",
           alignItems: "center",
+          justifyContent: "center"
         }}
       >
-        <div className="row w-100">
-          <div className="col-lg-6">
+        <div className="hero">
+
+        <div className="section-title">
+          <div className="">
             <div className="hero-text text-white">
-              <h1>Hotel Sakthi Sri Deluxe</h1>
-              <p>
-                Here are the best hotel booking sites, including recommendations
-                for international travel and for finding low-priced hotel rooms.
-              </p>
+              <h1 id="hero-main-text">Hotel Sakthi Sri Deluxe</h1>
+              <h3 className="col-lg-8 offset-lg-2">
+                Find the best hotel deals in Salem — perfect for international
+                travelers and budget-friendly stays.
+              </h3>
               <a href="#" className="primary-btn">
                 Discover Now
               </a>
             </div>
           </div>
-          <div className="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
-            <div className="booking-form bg-white p-4 rounded shadow">
-              <h3>Booking Your Hotel</h3>
-              <form action="#">
-                <div className="check-date">
-                  <label htmlFor="date-in">Check In:</label>
-                  <input type="text" className="date-input" id="date-in" />
-                  <i className="icon_calendar"></i>
-                </div>
-                <div className="check-date">
-                  <label htmlFor="date-out">Check Out:</label>
-                  <input type="text" className="date-input" id="date-out" />
-                  <i className="icon_calendar"></i>
-                </div>
-                <div className="select-option">
-                  <label htmlFor="guest">Guests:</label>
-                  <select id="guest">
-                    <option value="">2 Adults</option>
-                    <option value="">3 Adults</option>
-                  </select>
-                </div>
-                <div className="select-option">
-                  <label htmlFor="room">Room:</label>
-                  <select id="room">
-                    <option value="">1 Room</option>
-                    <option value="">2 Room</option>
-                  </select>
-                </div>
-                <button type="submit">Check Availability</button>
-              </form>
+          
+        </div>
+        
+
+          {showBookingForm && (
+            <div className="col-xl-4 col-lg-5 w-full lg:w-5/12 xl:ml-auto lg:ml-8 mt-8 lg:mt-0 relative">
+              <div
+                className={`
+                  booking-form bg-white p-6 rounded-2xl shadow-lg
+                  transform transition-all duration-500
+                  opacity-100 scale-100
+                `}
+                style={{
+                  /* initial hidden state before mount for animation */
+                  animation: "zoomFadeIn 0.5s ease-out forwards",
+                }}
+              >
+                {/* Close button */}
+                <button
+                  onClick={onCloseBooking}
+                  className="absolute top-5 right-1 text-gray-500 hover:text-gray-800 text-xl leading-none border-0 outline-none focus:outline-none focus:ring-0"
+                  aria-label="Close booking form"
+                >
+                  &times;
+                </button>
+
+                <h3 className="text-2xl font-semibold mb-4">Book Your Hotel</h3>
+                <form action="#">
+                  <div className="check-date mb-4 relative">
+                    <label htmlFor="date-in" className="block mb-1">
+                      Check In:
+                    </label>
+                    <input
+                      type="text"
+                      id="date-in"
+                      className="date-input w-full border px-3 py-2 rounded"
+                      placeholder="Select date"
+                    />
+                    <i className="icon_calendar absolute right-3 top-[2.4rem]"></i>
+                  </div>
+                  <div className="check-date mb-4 relative">
+                    <label htmlFor="date-out" className="block mb-1">
+                      Check Out:
+                    </label>
+                    <input
+                      type="text"
+                      id="date-out"
+                      className="date-input w-full border px-3 py-2 rounded"
+                      placeholder="Select date"
+                    />
+                    <i className="icon_calendar absolute right-3 top-[2.4rem]"></i>
+                  </div>
+                  <div className="select-option mb-4">
+                    <label htmlFor="guest" className="block mb-1">
+                      Guests:
+                    </label>
+                    <select
+                      id="guest"
+                      className="w-full border px-3 py-2 rounded"
+                    >
+                      <option>2 Adults</option>
+                      <option>3 Adults</option>
+                      <option>4 Adults</option>
+                    </select>
+                  </div>
+                  <div className="select-option mb-6">
+                    <label htmlFor="room" className="block mb-1">
+                      Room:
+                    </label>
+                    <select
+                      id="room"
+                      className="w-full border px-3 py-2 rounded"
+                    >
+                      <option>1 Room</option>
+                      <option>2 Rooms</option>
+                    </select>
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full primary-btn text-center py-2 rounded hover:bg-blue-700 transition"
+                  >
+                    Check Availability
+                  </button>
+                </form>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes zoomFadeIn {
+          0% {
+            opacity: 0;
+            transform: scale(0.5);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      `}</style>
     </section>
   );
 };
