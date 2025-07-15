@@ -59,7 +59,7 @@ const Room = () => {
                                                 </tr>
                                             </tbody>
                                         </table>
-                                        <a href="#" className="primary-btn">More Details</a>
+                                        <a href="#" className="primary-btn">Book Now</a>
                                     </div>
                                 </div>
                             </div>
