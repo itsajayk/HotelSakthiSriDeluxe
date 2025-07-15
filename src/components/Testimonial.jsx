@@ -18,7 +18,7 @@ const testimonials = [
     rooms, in-built parking, and friendly service made everything stress-free. The kids loved
     how clean and cozy everything was, and we loved the peace of mind that came with the
     reliable power backup and round-the-clock staff support. Highly recommended!`,
-        name: 'ASuganthi Arumugam, Chennai.',
+        name: 'Suganthi Arumugam, Chennai.',
     rating: 4.5,
     logo: '/img/testimonial-logo.png', // fixed for Vite
   },

@@ -754,6 +754,9 @@ ul, ol {
 .about-text p.f-para {
 	margin-bottom: 10px;
 }
+.f-para, .s-para{
+	text-align: justify;
+}
 .about-text p.s-para {
 	margin-bottom: 35px;
 }
@@ -775,7 +778,7 @@ ul, ol {
 	margin-bottom: 36px;
 }
 .service-item {
-	text-align: center;
+	text-align: justify;
 	padding: 30px 35px 18px;
 	-webkit-transition: all 0.3s;
 	-o-transition: all 0.3s;
@@ -899,7 +902,7 @@ ul, ol {
 	color: #707079;
 	background: #ffffff;
 	line-height: 48px;
-	text-align: center;
+	text-align: justify;
 	border-radius: 50%;
 	position: absolute;
 	left: -190px;
@@ -920,7 +923,7 @@ ul, ol {
 	right: -190px;
 }
 .testimonial-slider .ts-item {
-	text-align: center;
+	text-align: justify;
 }
 .testimonial-slider .ts-item p {
 	font-size: 20px;
@@ -946,6 +949,41 @@ ul, ol {
 /*---------------------
   Blog and Event
 -----------------------*/
+
+/* Footer.css */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 
 .blog-section {
 	padding-bottom: 70px;
@@ -1122,6 +1160,7 @@ ul, ol {
 }
 .about-page-text {
 	margin-bottom: 65px;
+	text-align: justify;
 }
 .about-page-text .ap-title {
 	margin-bottom: 30px;

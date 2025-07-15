@@ -107,7 +107,7 @@ const AboutUs = () => {
                 <h2>Discover Our Hotel & Services.</h2>
                 <p>It’s Hurricane Season But We Are Visiting Hilton Head Island</p>
                 <a
-                  href="https://www.youtube.com/watch?v=EzKkl64rRbM"
+                  href=""
                   className="play-btn video-popup"
                 >
                   <img src={playImg} alt="Play" />

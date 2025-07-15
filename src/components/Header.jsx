@@ -17,10 +17,10 @@ const Header = ({ onBookingClick }) => {
                             <div className="col-lg-6">
                                 <div className="tn-right">
                                     <div className="top-social">
-                                        <a href="#"><i className="fa fa-facebook"></i></a>
+                                        {/* <a href="#"><i className="fa fa-facebook"></i></a>
                                         <a href="#"><i className="fa fa-twitter"></i></a>
                                         <a href="#"><i className="fa fa-tripadvisor"></i></a>
-                                        <a href="#"><i className="fa fa-instagram"></i></a>
+                                        <a href="#"><i className="fa fa-instagram"></i></a> */}
                                     </div>
                                     <button
                                         onClick={onBookingClick}
@@ -37,14 +37,14 @@ const Header = ({ onBookingClick }) => {
                                         Booking Now
                                     </button>
                                     <div className="language-option">
-                                        <img src="/img/flag.jpg" alt="" />
+                                        {/* <img src="/img/flag.jpg" alt="" />
                                         <span>EN <i className="fa fa-angle-down"></i></span>
                                         <div className="flag-dropdown">
                                             <ul>
                                                 <li><a href="#">Zi</a></li>
                                                 <li><a href="#">Fr</a></li>
                                             </ul>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@ const Header = ({ onBookingClick }) => {
                                         </ul>
                                     </nav>
                                     <div className="nav-right search-switch">
-                                        <i className="icon_search"></i>
+                                        {/* <i className="icon_search"></i> */}
                                     </div>
                                 </div>
                             </div>
