@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '/public/css/slicknav.min.css';
 
-
-
 const Header = ({ onBookingClick }) => {
   const [offcanvasOpen, setOffcanvasOpen] = useState(false);
 
@@ -30,16 +28,7 @@ const Header = ({ onBookingClick }) => {
           {/* <i className="icon_search"></i> */}
         </div>
         <div className="header-configure-area">
-          {/* <div className="language-option">
-            <img src="/img/flag.jpg" alt="Flag" />
-            <span>EN <i className="fa fa-angle-down"></i></span>
-            <div className="flag-dropdown">
-              <ul>
-                <li><a href="#">Zi</a></li>
-                <li><a href="#">Fr</a></li>
-              </ul>
-            </div>
-          </div> */}
+          
           <button onClick={onBookingClick} className="bk-btn">
             Booking Now
           </button>
