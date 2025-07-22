@@ -70,9 +70,38 @@ p {
 	line-height: 26px;
 	margin: 0 0 15px 0;
 }
+/* Base image styling */
 img {
-	max-width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block; /* Prevents bottom whitespace in some layouts */
+    /* Center the image horizontally if needed */
 }
+
+/* Optional: Add responsiveness tweaks with media queries */
+
+/* Small devices (phones, up to 600px) */
+@media (max-width: 600px) {
+  img {
+    width: 55%;
+  }
+}
+
+/* Medium devices (tablets, 601px to 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  img {
+    width: 50%;
+  }
+}
+
+/* Large devices (desktops, 1025px and above) */
+@media (min-width: 1025px) {
+  img {
+    width: auto; /* Let it be based on its container */
+    max-width: 100%;
+  }
+}
+
 input:focus, select:focus, button:focus, textarea:focus {
 	outline: none;
 }
@@ -498,6 +527,44 @@ ul, ol {
 /*---------------------
   Hero
 -----------------------*/
+/* -------------------------------------------------------------------
+   Force‐show the raw mainmenu in the offcanvas wrapper (instead of SlickNav)
+--------------------------------------------------------------------- */
+.offcanvas-menu-wrapper .mainmenu.mobile-menu {
+  display: block !important;
+}
+
+.offcanvas-menu-wrapper .mainmenu.mobile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.offcanvas-menu-wrapper .mainmenu.mobile-menu li {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.offcanvas-menu-wrapper .mainmenu.mobile-menu li a {
+  display: block;
+  color: #19191a;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0 20px;
+}
+
+.offcanvas-menu-wrapper .mainmenu.mobile-menu li a:hover {
+  color: #dfa974;
+}
+
+/* indent any dropdowns */
+.offcanvas-menu-wrapper .mainmenu.mobile-menu li .dropdown {
+  padding-left: 20px;
+}
+.offcanvas-menu-wrapper .mainmenu.mobile-menu li .dropdown li {
+  border: none;
+  padding: 8px 0;
+}
 
 
 .page-transition {
@@ -2264,6 +2331,7 @@ ul, ol {
 		color: #ffffff;
 		text-transform: uppercase;
 		letter-spacing: 2px;
+		border: none;
 	}
 	.offcanvas-menu-wrapper .mainmenu {
 		display: none;
