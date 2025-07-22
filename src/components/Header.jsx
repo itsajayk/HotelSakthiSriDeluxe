@@ -124,14 +124,18 @@ const Header = ({ onBookingClick }) => {
         </div>
 
         {/* glowing keyframes */}
-        <style jsx>{`
-          @keyframes glowing {
-            0% { box-shadow: 0 0 5px #ff0203; }
-            50% { box-shadow: 0 0 20px #cc0102; }
-            100% { box-shadow: 0 0 5px #7f0001; }
-          }
-          .glow { animation: glowing 2s ease-in-out infinite; }
-        `}</style>
+        {/* glowing keyframes */}
+                <style>
+                {`
+                    @keyframes glowing {
+                    0% { box-shadow: 0 0 5px #ff0203; }
+                    50% { box-shadow: 0 0 20px #cc0102; }
+                    100% { box-shadow: 0 0 5px #7f0001; }
+                    }
+                    .glow { animation: glowing 2s ease-in-out infinite; }
+                `}
+                </style>
+
       </header>
       {/* Header Section End */}
     </>
