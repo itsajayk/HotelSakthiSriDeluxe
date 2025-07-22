@@ -1,28 +1,30 @@
-// components/PageTransitionWrapper.jsx
-import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useLocation, Routes } from 'react-router-dom';
 
-const PageTransitionWrapper = ({ children }) => {
-  const location = useLocation();
-  const [loading, setLoading] = useState(true);
+export default function PageTransitionWrapper({ children }) {
+  const realLocation = useLocation();
+  const [displayLocation, setDisplayLocation] = useState(realLocation);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // Simulate loading time on route change
-    setLoading(true);
-    window.scrollTo(0, 0); // Scroll to top
+    if (realLocation.pathname !== displayLocation.pathname) {
+      setLoading(true);
+      window.scrollTo(0, 0);
 
-    const timeout = setTimeout(() => {
-      setLoading(false);
-    }, 600); // Change delay for preloader effect
+      const timer = setTimeout(() => {
+        setDisplayLocation(realLocation);
+        setLoading(false);
+      }, 600);
 
-    return () => clearTimeout(timeout);
-  }, [location]);
+      return () => clearTimeout(timer);
+    }
+  }, [realLocation, displayLocation]);
 
   return (
     <div className={`page-transition ${loading ? 'loading' : 'loaded'}`}>
-      {children}
+      <Routes location={displayLocation}>
+        {children.props.children}
+      </Routes>
     </div>
   );
-};
-
-export default PageTransitionWrapper;
+}
