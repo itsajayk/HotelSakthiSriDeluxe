@@ -63,7 +63,7 @@ const Hero = ({ showBookingForm, onCloseBooking }) => {
               <h1 id="hero-main-text">Hotel Sri Sakthi Deluxe</h1>
               <h3 className="col-lg-8 offset-lg-2">
                 Find the best hotel deals in Salem — perfect for international
-                travelers and budget-friendly stays.
+                travelers & budget-friendly stays.
               </h3>
               <a href="#" className="primary-btn">
                 Discover Now
