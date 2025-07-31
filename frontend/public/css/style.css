@@ -606,116 +606,355 @@ ul, ol {
 } */
 
 .hero-text h1 {
-	font-size: 80px;
+	font-size: 150px;
 	line-height: 90px;
 	color: #ffffff;
 	margin-bottom: 16px;
-	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+	/* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
 }
 .hero-text h3 {
-	font-size: 28px;
-	color: #ffffff;
-	line-height: 28px;
-	margin-bottom: 35px;
-	/* font-weight: bold; */
-	font-family: "Roboto", sans-serif;
-	-webkit-text-stroke: 0.5px rgba(0,0,0,0.8);
-	font-weight: 550;            /* adjust per-font */
-  	letter-spacing: 0.4px;       /* slight tracking boost */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1px;
 }
+
+.hero-text h3 .letter {
+  position: relative;
+  display: inline-block;
+  animation: sparkle 2.5s infinite ease-in-out;
+  color: #ffffff;
+  font-size: 10px;
+  font-family: "Roboto", sans-serif;
+  -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.8);
+  font-weight: 550;
+  letter-spacing: 0.4px;
+}
+
+.hero-text h3 .letter.space {
+  width: 0.5em;
+}
+
+	/* Vary animation delays to make sparkles more dynamic */
+	.hero-text h3 .letter:nth-child(3n) {
+	animation-delay: 0.2s;
+	}
+	.hero-text h3 .letter:nth-child(4n) {
+	animation-delay: 0.4s;
+	}
+	.hero-text h3 .letter:nth-child(5n) {
+	animation-delay: 0.6s;
+	}
+
+	@keyframes sparkle {
+	0%, 100% {
+		text-shadow: 0 0 1px #fff, 0 0 2px #ff6fff;
+		filter: brightness(1);
+	}
+	50% {
+		text-shadow: 0 0 1px #fff, 0 0 3px #ffd700, 0 0 5px #f0f;
+		filter: brightness(1.6);
+	}
+	}
+
+	/* Responsive Adjustments */
+			@media (max-width: 1024px) {
+			.hero-section h3 {
+				font-size: 1.2rem;
+				gap: 0.5px;
+			}
+			}
+			@media (max-width: 768px) {
+			.hero-section h1 { font-size: 2rem; }
+			.hero-section h3 {
+				font-size: 1rem;
+				gap: 0.4px;
+			}
+			}
+			@media (max-width: 480px) {
+			.hero-section h1 { font-size: 1.5rem; }
+			.hero-section h3 {
+				font-size: 1rem;
+				gap: 0.3px;
+			}
+			}
+
 
 .hero-text h1,
 .hero-text h3 {
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
 }
 
+/* ======================================== 
+   Booking Form Styles 
+   ======================================== */
+
+/* Container & Card */
 .booking-form {
-	background: #ffffff;
-	padding: 5px 40px 30px 30px;
-	border-radius: 4px;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  max-width: 420px;       /* ensure it never grows too wide */
+  width: 100%;            /* but will shrink on mobile */
+  margin: 2rem auto;      /* center in its parent */
+  box-sizing: border-box; /* include padding in width */
+  font-family: "Inter", sans-serif;
+  position: relative;
+}
+
+/* Title */
+.booking-form h3 {
+  font-size: 1.75rem;
+  color: #162A45;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* Shared label styles */
+.booking-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: #586077;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+/* Text, date & tel inputs */
+.booking-form input[type="text"],
+.booking-form input[type="date"],
+.booking-form input[type="tel"],
+.booking-form input[type="email"] {
+  width: 100%;
+  height: 3rem;
+  padding: 0 1rem;
+  border: 1px solid #E3E8EF;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  color: #162A45;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+.booking-form input:focus {
+  border-color: #3F8CF2;
+  box-shadow: 0 0 0 3px rgba(63,140,242,0.2);
+  outline: none;
+}
+
+/* Select dropdown (native) */
+.booking-form select {
+  width: 100%;
+  height: 3rem;
+  padding: 0 1rem;
+  border: 1px solid #E3E8EF;
+  border-radius: 0.75rem;
+  background: url('data:image/svg+xml;utf8,<svg fill="%23586077" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 1rem center;
+  background-size: 1.25rem;
+  appearance: none;
+  font-size: 1rem;
+  color: #162A45;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+.booking-form select:focus {
+  border-color: #3F8CF2;
+  box-shadow: 0 0 0 3px rgba(63,140,242,0.2);
+  outline: none;
+}
+
+/* Spacing helpers */
+.booking-form .mb-4 { margin-bottom: 1rem; }
+.booking-form .mb-6 { margin-bottom: 1.5rem; }
+
+/* Submit Button */
+.booking-form button[type="submit"] {
+  width: 100%;
+  height: 3rem;
+  background: linear-gradient(135deg, #3F8CF2 0%, #4AB3F4 100%);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.booking-form button[type="submit"]:hover {
+  background: linear-gradient(135deg, #367BC1 0%, #3FA8E0 100%);
+  transform: translateY(-2px);
+}
+.booking-form button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* Icon styling (e.g. calendar) */
+.booking-form .icon_calendar {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.75rem;
+  color: #3F8CF2;
+  font-size: 1.25rem;
+  pointer-events: none;
+}
+
+/* Hero.css */
+
+/* Overlay & Container */
+.overlay-container {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Section title */
+.section-title {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+.section-title h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.section-title .subtitle {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+.discover-btn {
+  background: #fff;
+  color: #056d45;
+  padding: 0.75rem 2rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+.discover-btn:hover {
+  background: #f1f1f1;
+}
+
+/* Booking overlay */
+.booking-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding: 1rem;
+  top: 1.5rem;
+}
+
+/* Booking form card */
+.booking-form {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 360px;
+  position: relative;
 }
 .booking-form h3 {
-	color: #19191a;
-	margin-bottom: 36px;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #162A45;
 }
-.booking-form form .check-date {
-	position: relative;
-	margin-bottom: 15px;
+
+/* Labels & Inputs */
+.booking-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: #586077;
 }
-.booking-form form .check-date label {
-	font-size: 14px;
-	color: #707079;
-	display: block;
-	margin-bottom: 10px;
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  padding: 0.5rem .75rem;
+  /* margin-bottom: .5rem; */
+  font-size: 1rem;
+  border: 1px solid #E3E8EF;
+  border-radius: 0.75rem;
 }
-.booking-form form .check-date input {
-	width: 100%;
-	height: 50px;
-	border: 1px solid #ebebeb;
-	border-radius: 2px;
-	font-size: 16px;
-	color: #19191a;
-	text-transform: uppercase;
-	font-weight: 500;
-	padding-left: 20px;
+.date-group {
+  display: flex;
+  gap: 1rem;
 }
-.booking-form form .check-date i {
-	color: #056d45;
-	position: absolute;
-	right: 18px;
-	bottom: 17px;
+.date-field {
+  flex: 1;
 }
-.booking-form form .select-option {
-	margin-bottom: 15px;
+
+/* Submit button */
+.booking-form button[type="submit"] {
+  width: 100%;
+  padding: 0.7rem;
+  background: #056d45;
+  color: #fff;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
 }
-.booking-form form .select-option label {
-	font-size: 14px;
-	color: #707079;
-	display: block;
-	margin-bottom: 10px;
+.booking-form button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
-.booking-form form .select-option .nice-select {
-	border-radius: 2px;
-	border: 1px solid #ebebeb;
-	height: 50px;
-	line-height: 50px;
-	outline: none;
-	padding-left: 20px;
-	width: 100%;
-	float: none;
+.booking-form button[type="submit"]:hover:not(:disabled) {
+  background: #045c3a;
 }
-.booking-form form .select-option .nice-select:after {
-	border-bottom: 2px solid #056d45;
-	border-right: 2px solid #056d45;
-	height: 10px;
-	margin-top: 0;
-	right: 20px;
-	width: 10px;
-	top: 36%;
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #586077;
+  cursor: pointer;
 }
-.booking-form form .select-option .nice-select span {
-	font-size: 16px;
-	color: #19191a;
-	text-transform: uppercase;
-	font-weight: 500;
+
+/* Error text */
+.error-text {
+  color: #e53e3e;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
-.booking-form form .select-option .nice-select .list {
-	margin-top: 0;
-	width: 100%;
+
+/* Responsive tweak */
+@media (max-width: 480px) {
+  .booking-form {
+    padding: 1.5rem;
+  }
+  .date-group {
+    flex-direction: column;
+  }
 }
-.booking-form form button {
-	display: block;
-	font-size: 14px;
-	text-transform: uppercase;
-	border: 1px solid #056d45;
-	border-radius: 2px;
-	color: #056d45;
-	font-weight: 500;
-	background: transparent;
-	width: 100%;
-	height: 46px;
-	margin-top: 30px;
+
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .booking-form {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  .booking-form h3 {
+    font-size: 1.5rem;
+  }
 }
+
 .hero-slider {
 	position: absolute;
 	width: 100%;
