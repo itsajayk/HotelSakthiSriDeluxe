@@ -30,7 +30,7 @@ const Header = ({ onBookingClick }) => {
         <div className="header-configure-area">
           
           <button onClick={onBookingClick} className="bk-btn">
-            Booking Now
+            Book Now
           </button>
         </div>
         <nav className="mainmenu mobile-menu">
@@ -78,7 +78,7 @@ const Header = ({ onBookingClick }) => {
                     onClick={onBookingClick}
                     className="bk-btn bg-blue-600 text-white px-4 py-2 rounded border-0 outline-none focus:ring-0 animate-pulse transition"
                   >
-                    Booking Now
+                    Book Now
                   </button>
                 </div>
               </div>

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast, Slide } from 'react-toastify';
 import Hero1 from "../assets/hero/hero-4.jpeg";
 import Hero2 from "../assets/hero/hero-5.jpeg";
 import emailjs from "emailjs-com";
@@ -16,7 +18,6 @@ const Hero = ({ showBookingForm, onCloseBooking }) => {
   const sliderImages = [Hero1, Hero2];
   const API_PORT = import.meta.env.VITE_API_PORT || 3001;
 
-
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -30,13 +31,12 @@ const Hero = ({ showBookingForm, onCloseBooking }) => {
   const [isClosing, setIsClosing] = useState(false);
 
   const handleCloseBooking = () => {
-  setIsClosing(true);
-  setTimeout(() => {
-    setIsClosing(false);
-    onCloseBooking();
-  }, 500); // match animation duration
-};
-
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsClosing(false);
+      onCloseBooking();
+    }, 500); // match animation duration
+  };
 
   const onChange = (e) => {
     const { name, value } = e.target;
@@ -65,12 +65,43 @@ const Hero = ({ showBookingForm, onCloseBooking }) => {
         }
       );
       if (!res.ok) throw new Error(await res.text());
-      alert("Booking request sent!");
+
+      // Custom success toast
+      toast.success(
+        "\u2705 Booking request sent successfully!", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        transition: Slide,
+        style: {
+          background: 'linear-gradient(135deg, #6EE7B7 0%, #3B82F6 100%)',
+          color: '#fff',
+          borderRadius: '12px',
+          boxShadow: '0 4px 16px rgba(0,0,0,0.2)',
+          fontWeight: '500',
+          fontSize: '1rem'
+        }
+      });
+
       setForm({ name: "", phone: "", dateIn: "", dateOut: "", guests: "1 Adult", rooms: "1 Room" });
       onCloseBooking();
     } catch (err) {
       console.error(err);
       setError("Failed to send booking – please try again.");
+      toast.error("❌ Failed to send booking. Please try again.", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        transition: Slide,
+      });
     } finally {
       setSubmitting(false);
     }
@@ -260,12 +291,15 @@ const Hero = ({ showBookingForm, onCloseBooking }) => {
             transform: scale(0.5);
           }
         }
-        
+
         .close-btn {
           background: transparent;
           border: none;
         }
       `}</style>
+
+      {/* Toast container for success/error messages */}
+      <ToastContainer />
     </section>
   );
 };

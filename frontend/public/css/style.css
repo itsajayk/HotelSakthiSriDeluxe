@@ -728,11 +728,13 @@ ul, ol {
 .booking-form input[type="tel"],
 .booking-form input[type="email"] {
   width: 100%;
-  height: 3rem;
+  height: 2.5rem;
   padding: 0 1rem;
   border: 1px solid #E3E8EF;
   border-radius: 0.75rem;
   font-size: 1rem;
+  margin-bottom: 0.5rem;
+
   color: #162A45;
   transition: border-color 0.2s, box-shadow 0.2s;
   box-sizing: border-box;
@@ -746,10 +748,12 @@ ul, ol {
 /* Select dropdown (native) */
 .booking-form select {
   width: 100%;
-  height: 3rem;
+  height: 2.5rem;
   padding: 0 1rem;
   border: 1px solid #E3E8EF;
   border-radius: 0.75rem;
+    margin-bottom: 0.5rem;
+
   background: url('data:image/svg+xml;utf8,<svg fill="%23586077" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 1rem center;
   background-size: 1.25rem;
   appearance: none;
@@ -846,7 +850,7 @@ ul, ol {
   inset: 0;
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: flex-end;
   padding: 1rem;
   top: 1.5rem;
 }
@@ -854,11 +858,14 @@ ul, ol {
 /* Booking form card */
 .booking-form {
   background: #fff;
-  padding: 1rem;
+  padding: 1.2rem 2rem;
   border-radius: 1rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  max-width: 350px;
   width: 100%;
-  max-width: 360px;
+  margin: 2rem 0 2rem auto;  /* align to right using auto left margin */
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
   position: relative;
 }
 .booking-form h3 {
