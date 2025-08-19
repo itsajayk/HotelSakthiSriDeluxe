@@ -12,27 +12,30 @@ if (!TWILIO_SID || !TWILIO_AUTH_TOKEN || !TWILIO_PHONE_NUMBER || !HOTEL_NOTIFY_P
 const app = express();
 
 // replace your app.use(cors(...)) with this:
-const allowedOrigins = [
-  "https://hotelsakthisrideluxe.com",
-  "https://www.hotelsakthisrideluxe.com",
-  "https://hotelsakthisrideluxe.onrender.com",
-  "https://hotelsrisakthideluxe.com",
-  "http://localhost:5173",
-  "http://localhost:3000"
-];
+// const allowedOrigins = [
+//   "https://hotelsakthisrideluxe.com",
+//   "https://www.hotelsakthisrideluxe.com",
+//   "https://hotelsakthisrideluxe.onrender.com",
+//   "https://hotelsrisakthideluxe.com",
+//   "http://localhost:5173",
+//   "http://localhost:3000"
+// ];
 
-app.use(cors({
-  origin: function(origin, callback){
-    // allow non-browser requests (curl, some mobile SDKs)
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.indexOf(origin) !== -1) {
-      return callback(null, true);
-    } else {
-      console.warn("Blocked CORS origin:", origin);
-      return callback(new Error("Not allowed by CORS"));
-    }
-  }
-}));
+// app.use(cors({
+//   origin: function(origin, callback){
+//     // allow non-browser requests (curl, some mobile SDKs)
+//     if (!origin) return callback(null, true);
+//     if (allowedOrigins.indexOf(origin) !== -1) {
+//       return callback(null, true);
+//     } else {
+//       console.warn("Blocked CORS origin:", origin);
+//       return callback(new Error("Not allowed by CORS"));
+//     }
+//   }
+// }));
+
+app.use(cors()); // temporarily
+
 
 
 app.use(express.json());

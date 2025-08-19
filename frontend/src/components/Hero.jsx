@@ -44,68 +44,89 @@ const Hero = ({ showBookingForm, onCloseBooking }) => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSubmitting(true);
-    setError("");
-    try {
-      // Send email via EmailJS
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        { ...form },
-        import.meta.env.VITE_EMAILJS_USER_ID
-      );
-      // Trigger SMS via backend
-      const res = await fetch(
-        `${API_BASE_URL}/api/book`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(form),
-        }
-      );
-      if (!res.ok) throw new Error(await res.text());
+  e.preventDefault();
+  setSubmitting(true);
+  setError("");
 
-      // Custom success toast
-      toast.success(
-        "\u2705 Booking request sent successfully!", {
-          position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        transition: Slide,
-        style: {
-          background: 'linear-gradient(135deg, #6EE7B7 0%, #3B82F6 100%)',
-          color: '#fff',
-          borderRadius: '12px',
-          boxShadow: '0 4px 16px rgba(0,0,0,0.2)',
-          fontWeight: '500',
-          fontSize: '1rem'
-        }
-      });
-
-      setForm({ name: "", phone: "", dateIn: "", dateOut: "", guests: "1 Adult", rooms: "1 Room" });
-      onCloseBooking();
-    } catch (err) {
-      console.error(err);
-      setError("Failed to send booking – please try again.");
-      toast.error("❌ Failed to send booking. Please try again.", {
-        position: toast.POSITION.TOP_RIGHT,
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        transition: Slide,
-      });
-    } finally {
-      setSubmitting(false);
+  // quick sanity checks
+  try {
+    if (!API_BASE_URL) throw new Error("API_BASE_URL not set (check deployed env).");
+    if (window.location.protocol === "https:" && API_BASE_URL.startsWith("http:")) {
+      throw new Error("Mixed content blocked: site is HTTPS but API_BASE_URL uses HTTP. Use HTTPS for API.");
     }
-  };
+  } catch (preErr) {
+    console.error("Pre-submit error:", preErr);
+    setError(preErr.message);
+    toast.error("❌ " + preErr.message);
+    setSubmitting(false);
+    return;
+  }
+
+  try {
+    console.log("Sending EmailJS...");
+    const emailRes = await emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      { ...form },
+      import.meta.env.VITE_EMAILJS_USER_ID
+    );
+    console.log("EmailJS response:", emailRes);
+
+  } catch (emailErr) {
+    // EmailJS may fail due to referrer/domain restrictions; don't stop — still try backend
+    console.warn("EmailJS send failed (continuing to backend):", emailErr?.message || emailErr);
+  }
+
+  // call backend
+  let res;
+  try {
+    console.log("fetch ->", `${API_BASE_URL}/api/book`, "body:", form);
+    res = await fetch(`${API_BASE_URL}/api/book`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      // mode: "cors", // default is fine; uncomment if you want to experiment
+      body: JSON.stringify(form),
+    });
+  } catch (networkErr) {
+    console.error("Network/fetch error:", networkErr);
+    setError("Network error while sending booking. See console for details.");
+    toast.error("❌ Network error. Check console / server reachability.");
+    setSubmitting(false);
+    return;
+  }
+
+  // parse response safely and surface details
+  let bodyText = "";
+  try {
+    bodyText = await res.text();
+    // try to parse JSON if possible
+    try { 
+      const json = JSON.parse(bodyText);
+      console.log("Server JSON response:", json);
+      bodyText = JSON.stringify(json);
+    } catch (ignore) {
+      console.log("Server text response:", bodyText);
+    }
+  } catch (readErr) {
+    console.warn("Failed to read response body:", readErr);
+  }
+
+  if (!res.ok) {
+    console.error("Server returned non-OK:", res.status, bodyText);
+    setError("Failed to send booking – please try again.");
+    toast.error(`❌ Booking failed: ${res.status} - ${bodyText.substring(0, 200)}`);
+    setSubmitting(false);
+    return;
+  }
+
+  // success
+  console.log("Booking success:", res.status, bodyText);
+  toast.success("✅ Booking request sent successfully!");
+  setForm({ name: "", phone: "", dateIn: "", dateOut: "", guests: "1 Adult", rooms: "1 Room" });
+  onCloseBooking();
+  setSubmitting(false);
+};
+
 
   return (
     <section
