@@ -3,24 +3,24 @@ import React from 'react';
 const Rooms = () => {
   const rooms = [
     {
-      name: 'Double Room',
+      // name: 'Double Room',
       // price: 199,
-      img: 'img/room/room-b1.jpg',
+      // img: 'img/room/room-b1.jpg',
     },
     {
       name: 'Deluxe A/c',
       price: 1800,
-      img: 'img/room/room-b2.jpg',
+      img: 'img/gallery/3.webp',
     },
     {
       name: 'Deluxe Non A/c',
       price: 1100,
-      img: 'img/room/room-b3.jpg',
+      img: 'img/gallery/2.JPG',
     },
     {
-      name: 'Family Room',
+      // name: 'Family Room',
       // price: 299,
-      img: 'img/room/room-b4.jpg',
+      // img: 'img/room/room-b4.jpg',
     },
   ];
 
@@ -38,11 +38,11 @@ const Rooms = () => {
                   <div className="hr-text">
                     <h3>{room.name}</h3>
                     <h2>
-                      ₹{room.price}
+                      {room.price}
                       <span>/Per night</span>
                     </h2>
                     <table>
-                      <tbody>
+                      {/* <tbody>
                         <tr>
                           <td className="r-o">Size:</td>
                           <td>30 ft</td>
@@ -59,10 +59,10 @@ const Rooms = () => {
                           <td className="r-o">Services:</td>
                           <td>Wifi, Television, Bathroom,...</td>
                         </tr>
-                      </tbody>
+                      </tbody> */}
                     </table>
                     <a href="#" className="primary-btn">
-                      More Details
+                      {/* More Details */}
                     </a>
                   </div>
                 </div>

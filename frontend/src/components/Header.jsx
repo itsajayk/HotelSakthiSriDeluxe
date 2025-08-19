@@ -43,13 +43,13 @@ const Header = ({ onBookingClick }) => {
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div className="top-social">
-          <a href="#"><i className="fa fa-facebook"></i></a>
+          {/* <a href="#"><i className="fa fa-facebook"></i></a>
           <a href="#"><i className="fa fa-twitter"></i></a>
           <a href="#"><i className="fa fa-tripadvisor"></i></a>
-          <a href="#"><i className="fa fa-instagram"></i></a>
+          <a href="#"><i className="fa fa-instagram"></i></a> */}
         </div>
         <ul className="top-widget">
-          <li><i className="fa fa-phone"></i> 0427-3510200</li>
+          <li><i className="fa fa-phone"></i> +91 63844 23456</li>
           <li><i className="fa fa-envelope"></i> hotelsrisakthideluxe@gmail.com</li>
         </ul>
       </div>
@@ -62,17 +62,17 @@ const Header = ({ onBookingClick }) => {
             <div className="row">
               <div className="col-lg-6">
                 <ul className="tn-left">
-                  <li><i className="fa fa-phone"></i> 0427-3510200</li>
+                  <li><i className="fa fa-phone"></i> +91 63844 23456</li>
                   <li><i className="fa fa-envelope"></i> hotelsrisakthideluxe@gmail.com</li>
                 </ul>
               </div>
               <div className="col-lg-6">
                 <div className="tn-right">
                   <div className="top-social">
-                    <a href="#"><i className="fa fa-facebook"></i></a>
+                    {/* <a href="#"><i className="fa fa-facebook"></i></a>
                     <a href="#"><i className="fa fa-twitter"></i></a>
                     <a href="#"><i className="fa fa-tripadvisor"></i></a>
-                    <a href="#"><i className="fa fa-instagram"></i></a>
+                    <a href="#"><i className="fa fa-instagram"></i></a> */}
                   </div>
                   <button
                     onClick={onBookingClick}

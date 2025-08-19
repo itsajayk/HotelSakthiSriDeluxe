@@ -8,10 +8,10 @@ import aboutP2 from "/img/about/about-p2.jpg";
 import aboutP3 from "/img/about/about-p3.jpg";
 import videoBg from "/img/video-bg.jpg";
 import playImg from "/img/play.png";
-import gallery1 from "/img/gallery/gallery-1.jpg";
-import gallery2 from "/img/gallery/gallery-2.jpg";
-import gallery3 from "/img/gallery/gallery-3.jpg";
-import gallery4 from "/img/gallery/gallery-4.jpg";
+import gallery1 from "/img/gallery/gallery-1.JPG";
+import gallery2 from "/img/gallery/gallery-2.JPG";
+import gallery3 from "/img/gallery/gallery-3.JPG";
+import gallery4 from "/img/gallery/gallery-4.JPG";
 
 const AboutUs = () => {
   const aboutImages = [aboutP1, aboutP2, aboutP3];
@@ -92,31 +92,7 @@ const AboutUs = () => {
       </section>
 
       {/* Video Section */}
-      <section
-        className="video-section"
-        style={{
-          backgroundImage: `url(${videoBg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="video-text">
-                <h2>Discover Our Hotel & Services.</h2>
-                <p>It’s Hurricane Season But We Are Visiting Hilton Head Island</p>
-                <a
-                  href=""
-                  className="play-btn video-popup"
-                >
-                  <img src={playImg} alt="Play" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+     
 
       {/* Gallery Section */}
       <section className="gallery-section spad">
@@ -125,7 +101,7 @@ const AboutUs = () => {
             <div className="col-lg-12">
               <div className="section-title">
                 <span>Our Gallery</span>
-                <h2>Discover Our Work</h2>
+                <h2>Discover us</h2>
               </div>
             </div>
           </div>

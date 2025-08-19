@@ -600,10 +600,27 @@ ul, ol {
 .hero-text {
 	padding-top: 95px;
 }
+.hero-heading {
+  line-height: 1.2;
+}
 
-/* #hero-main-text{
-	font-family: "Pacifico", cursive;
-} */
+.hero-main-text {
+	color: #ff0000;
+	font-size: 4rem;
+	font-weight: 900;
+}
+
+.hero-sub-text {
+    color: #014229;
+	font-size: 3.5rem;
+	font-weight: 800;
+}
+
+.hero-img{
+	position: absolute;
+	top: 15%;
+	left: 30%;
+}
 
 .hero-text h1 {
 	font-size: 150px;
@@ -1176,7 +1193,7 @@ ul, ol {
 	transition: all 0.5s;
 }
 .hp-room-items .hp-room-item .hr-text h3 {
-	color: #ffffff;
+	color: red;
 	margin-bottom: 15px;
 }
 .hp-room-items .hp-room-item .hr-text h2 {
@@ -1198,8 +1215,9 @@ ul, ol {
 }
 .hp-room-items .hp-room-item .hr-text table tbody tr td {
 	font-size: 16px;
-	color: #ffffff;
+	color: #056d45;
 	line-height: 36px;
+	font-weight: 900;
 }
 .hp-room-items .hp-room-item .hr-text table tbody tr td.r-o {
 	width: 120px;

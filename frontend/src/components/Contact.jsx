@@ -24,7 +24,7 @@ const Contact = () => {
                     </tr>
                     <tr>
                       <td className="c-o">Phone:</td>
-                      <td> (0427) - 3510200</td>
+                      <td> +91 (99529) 79995</td>
                     </tr>
                     <tr>
                       <td className="c-o">Email:</td>

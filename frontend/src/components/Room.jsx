@@ -27,8 +27,8 @@ const Room = () => {
                     <div className="row">
                         {[
                             // { title: "Premium King Room", src: "/img/room/room-1.jpg", capacity: 3 },
-                            { title: "Deluxe Room A/c", src: "/img/room/room-2.jpg", capacity: 5 },
-                            { title: "Deluxe Room Non A/c", src: "/img/room/room-3.jpg", capacity: 2 },
+                            { title: "Deluxe Room A/c", src: "/img/gallery/3.webp", capacity: 5 },
+                            { title: "Deluxe Room Non A/c", src: "/img/gallery/5.webp", capacity: 2 },
                             // { title: "Luxury Room", src: "/img/room/room-4.jpg", capacity: 1 },
                             // { title: "Room With View", src: "/img/room/room-5.jpg", capacity: 1 },
                             // { title: "Small View", src: "/img/room/room-6.jpg", capacity: 2 },
@@ -38,7 +38,10 @@ const Room = () => {
                                     <img src={room.src} alt={room.title} />
                                     <div className="ri-text">
                                         <h4>{room.title}</h4>
-                                        <h3>159$<span>/Pernight</span></h3>
+                                        <h3>
+                                        {room.title === "Deluxe Room A/c" ? 1800 : 1200}
+                                        <span></span>
+                                        </h3>
                                         <table>
                                             <tbody>
                                                 <tr>
@@ -59,7 +62,7 @@ const Room = () => {
                                                 </tr>
                                             </tbody>
                                         </table>
-                                        <a href="#" className="primary-btn">Book Now</a>
+                                        {/* <a href="#" className="primary-btn">Book Now</a> */}
                                     </div>
                                 </div>
                             </div>

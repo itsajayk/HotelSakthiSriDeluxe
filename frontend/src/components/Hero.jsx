@@ -16,7 +16,7 @@ import emailjs from "emailjs-com";
  */
 const Hero = ({ showBookingForm, onCloseBooking }) => {
   const sliderImages = [Hero1, Hero2];
-  const API_PORT = import.meta.env.VITE_API_PORT || 3001;
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ||  'https://hotelsakthisrideluxe.onrender.com';
 
   const [form, setForm] = useState({
     name: "",
@@ -57,7 +57,7 @@ const Hero = ({ showBookingForm, onCloseBooking }) => {
       );
       // Trigger SMS via backend
       const res = await fetch(
-        `http://localhost:${API_PORT}/api/book`,
+        `${API_BASE_URL}/api/book`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -69,7 +69,7 @@ const Hero = ({ showBookingForm, onCloseBooking }) => {
       // Custom success toast
       toast.success(
         "\u2705 Booking request sent successfully!", {
-        position: toast.POSITION.TOP_RIGHT,
+          position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
@@ -131,6 +131,7 @@ const Hero = ({ showBookingForm, onCloseBooking }) => {
               height: "100vh",
               backgroundSize: "cover",
               backgroundPosition: "center",
+              opacity: "0.7",
             }}
           />
         ))}
@@ -149,14 +150,18 @@ const Hero = ({ showBookingForm, onCloseBooking }) => {
         }}
       >
         <div className="hero">
-          <div className="section-title text-center text-white">
-            <h1 id="hero-main-text">Hotel Sri Sakthi Deluxe</h1>
-            <h3 className="col-lg-8 offset-lg-2">
+          <div className="section-title text-center">
+            <div className="hero-heading">
+            <h3 className="hero-main-text">Hotel</h3>{" "}
+            <h3 className="hero-sub-text">Sri Sakthi Deluxe</h3>
+          </div>
+
+            <h3 className="col-lg-8 offset-lg-2 text-white">
               Find the best hotel deals in Salem — perfect for international
               travelers & budget-friendly stays.
             </h3>
             <a href="#" className="primary-btn">
-              Discover Now
+              {/* Discover Now */}
             </a>
           </div>
 
@@ -299,7 +304,7 @@ const Hero = ({ showBookingForm, onCloseBooking }) => {
       `}</style>
 
       {/* Toast container for success/error messages */}
-      <ToastContainer />
+      <ToastContainer position="top-right" />
     </section>
   );
 };

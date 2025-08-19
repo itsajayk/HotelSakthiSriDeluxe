@@ -20,7 +20,7 @@ function App() {
       <PageTransitionWrapper>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/rooms" element={<Rooms />} />
+          <Route path="/rooms" element={<Rooms/>} />
           <Route path="/about-us" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

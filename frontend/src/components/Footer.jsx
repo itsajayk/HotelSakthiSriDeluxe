@@ -89,7 +89,8 @@ const Footer = () => {
                 <div className="ft-contact">
                   <h6>Contact Us</h6>
                   <ul>
-                    <li>0427-3510200</li>
+                    <li>+91 63844 23456</li>
+                    <li>+91 99529 79995</li>
                     <li>hotelsrisakthideluxe@gmail.com</li>
                     <li>90, 91, 92, Behind New Bus Stand, Chinnery Vayal Kadu, Pallappatti, Salem - 636 009</li>
                   </ul>

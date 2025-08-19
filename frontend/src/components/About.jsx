@@ -23,7 +23,7 @@ const About = () => {
                     the city—making your trip truly enjoyable.
                     </p>
                     <a href="#" className="primary-btn about-btn">
-                    Read More
+                    {/* Read More */}
                     </a>
                 </div>
                 </div>
@@ -34,7 +34,7 @@ const About = () => {
                         <img src="img/about/hero-6.jpeg" alt="" />
                     </div>
                     <div className="col-sm-6">
-                        <img src="img/about/about-2.jpg" alt="" />
+                        {/* <img src="img/about/about-2.jpg" alt="" /> */}
                     </div>
                     </div>
                 </div>
