@@ -10,7 +10,7 @@ if (!TWILIO_SID || !TWILIO_AUTH_TOKEN || !TWILIO_PHONE_NUMBER || !HOTEL_NOTIFY_P
   process.exit(1);
 }
 const app = express();
-app.use(cors({ origin: ["http://localhost:5173"] }));
+app.use(cors({ origin: ["https://hotelsrisakthideluxe.com"] }));
 app.use(express.json());
 const twilio = Twilio(TWILIO_SID, TWILIO_AUTH_TOKEN);
 app.post("/api/book", async (req, res) => {
