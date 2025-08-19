@@ -27,6 +27,10 @@ const Contact = () => {
                       <td> +91 (99529) 79995</td>
                     </tr>
                     <tr>
+                      <td className="c-o"></td>
+                      <td> +91 (63844) 23456</td>
+                    </tr>
+                    <tr>
                       <td className="c-o">Email:</td>
                       <td>hotelsrisakthideluxe@gmail.com</td>
                     </tr>

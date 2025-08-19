@@ -39,7 +39,7 @@ const Room = () => {
                                     <div className="ri-text">
                                         <h4>{room.title}</h4>
                                         <h3>
-                                        {room.title === "Deluxe Room A/c" ? 1800 : 1200}
+                                        {room.title === "Deluxe Room A/c" ? 1800 : 1100}
                                         <span></span>
                                         </h3>
                                         <table>
